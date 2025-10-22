@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - uppercase</title>
+    <link rel="icon" type="image/svg+xml" href="Favicon.svg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/svg+xml" href="Favicon-light.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="Favicon.png" media="(prefers-color-scheme: no-preference)">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <svg width="30" height="30" viewBox="0 0 1010 1010" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_45_2)">
+                            <path d="M320.512 70.6294H694.177C694.177 70.6294 717.631 317.658 1010 466.191L931.827 683.511C931.827 683.511 642.581 597.517 508.123 247.305C508.123 247.305 426.819 538.109 81.2962 683.511L0 464.625C0 464.625 250.151 389.584 320.512 70.6294Z" fill="white"/>
+                            <path d="M687.26 940.725L504.322 827.807L322.626 936.14L315.847 643.497L501.239 529.183L694.153 648.25L687.26 940.725Z" fill="white"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_45_2">
+                                <rect width="1010" height="1010" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">uppercase</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="products.html" class="nav-link active">Products</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="team.html" class="nav-link">Our Team</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title">Our Products & MVPs</h1>
+                <p class="page-subtitle">Discover our innovative digital products and minimum viable products that showcase our expertise and creativity</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Overview -->
+    <section class="products-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Explore our cutting-edge digital solutions and innovative MVPs</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card featured">
+                    <div class="product-badge">MVP</div>
+                    <div class="product-image">
+                        <div class="product-placeholder">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>AI Video Editor</h3>
+                        <p>Revolutionary AI-powered video editing tool that automates complex editing tasks and enhances video quality using machine learning algorithms.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">AI Processing</span>
+                            <span class="feature-tag">Auto Editing</span>
+                            <span class="feature-tag">Quality Enhancement</span>
+                        </div>
+                        <div class="product-status">
+                            <span class="status-badge in-development">In Development</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary">Learn More</button>
+                            <button class="btn-secondary">Request Demo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">Product</div>
+                    <div class="product-image">
+                        <div class="product-placeholder">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>PC Optimization Suite</h3>
+                        <p>Comprehensive PC optimization software that boosts performance, cleans system files, and manages hardware resources efficiently.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">Performance Boost</span>
+                            <span class="feature-tag">System Cleanup</span>
+                            <span class="feature-tag">Hardware Management</span>
+                        </div>
+                        <div class="product-status">
+                            <span class="status-badge available">Available</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary">Download</button>
+                            <button class="btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">MVP</div>
+                    <div class="product-image">
+                        <div class="product-placeholder">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Design Automation Tool</h3>
+                        <p>AI-driven design automation platform that generates professional graphics, logos, and UI elements based on user requirements and preferences.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">AI Generation</span>
+                            <span class="feature-tag">Brand Assets</span>
+                            <span class="feature-tag">UI Elements</span>
+                        </div>
+                        <div class="product-status">
+                            <span class="status-badge beta">Beta Testing</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary">Join Beta</button>
+                            <button class="btn-secondary">View Gallery</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">Product</div>
+                    <div class="product-image">
+                        <div class="product-placeholder">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Gaming Performance Monitor</h3>
+                        <p>Advanced gaming performance monitoring tool that tracks FPS, system resources, and provides real-time optimization suggestions for gamers.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">FPS Tracking</span>
+                            <span class="feature-tag">Real-time Monitoring</span>
+                            <span class="feature-tag">Optimization Tips</span>
+                        </div>
+                        <div class="product-status">
+                            <span class="status-badge available">Available</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary">Download</button>
+                            <button class="btn-secondary">View Features</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">MVP</div>
+                    <div class="product-image">
+                        <div class="product-placeholder">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Code Generator AI</h3>
+                        <p>Intelligent code generation tool that creates clean, efficient code based on natural language descriptions and project requirements.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">Natural Language</span>
+                            <span class="feature-tag">Multi-language</span>
+                            <span class="feature-tag">Code Optimization</span>
+                        </div>
+                        <div class="product-status">
+                            <span class="status-badge coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary">Get Notified</button>
+                            <button class="btn-secondary">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">Product</div>
+                    <div class="product-image">
+                        <div class="product-placeholder">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>System Security Scanner</h3>
+                        <p>Comprehensive security scanning tool that detects vulnerabilities, malware, and provides recommendations for system protection.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">Vulnerability Detection</span>
+                            <span class="feature-tag">Malware Protection</span>
+                            <span class="feature-tag">Security Reports</span>
+                        </div>
+                        <div class="product-status">
+                            <span class="status-badge available">Available</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-primary">Download</button>
+                            <button class="btn-secondary">Security Report</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MVP Development Process -->
+    <section class="mvp-process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our MVP Development Process</h2>
+                <p class="section-subtitle">How we transform ideas into innovative products</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Ideation & Research</h3>
+                        <p>We start by identifying market needs, researching user pain points, and brainstorming innovative solutions that can make a real impact.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Prototype Development</h3>
+                        <p>Using rapid prototyping techniques, we create functional prototypes that demonstrate core features and validate our concepts.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>User Testing</h3>
+                        <p>We conduct extensive user testing to gather feedback, identify improvements, and ensure our products meet real user needs.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>MVP Launch</h3>
+                        <p>After thorough testing and refinement, we launch the MVP to early adopters and continue iterating based on real-world usage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="tech-stack-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technologies We Use</h2>
+                <p class="section-subtitle">Cutting-edge technologies powering our products</p>
+            </div>
+            
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>Frontend Development</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-vue"></i>
+                            <span>Vue.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-angular"></i>
+                            <span>Angular</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js"></i>
+                            <span>TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Backend Development</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-server"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>AI & Machine Learning</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fas fa-brain"></i>
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-robot"></i>
+                            <span>PyTorch</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-eye"></i>
+                            <span>OpenCV</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-language"></i>
+                            <span>NLP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Build Something Amazing?</h2>
+                <p>Let's collaborate on your next innovative product or MVP. Our team is ready to turn your ideas into reality.</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary">
+                        <span>Start a Project</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn-secondary">
+                        <span>View Our Services</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">
+                    <div class="logo-icon">
+                        <svg width="40" height="40" viewBox="0 0 1010 1010" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_45_2)">
+                                <path d="M320.512 70.6294H694.177C694.177 70.6294 717.631 317.658 1010 466.191L931.827 683.511C931.827 683.511 642.581 597.517 508.123 247.305C508.123 247.305 426.819 538.109 81.2962 683.511L0 464.625C0 464.625 250.151 389.584 320.512 70.6294Z" fill="white"/>
+                                <path d="M687.26 940.725L504.322 827.807L322.626 936.14L315.847 643.497L501.239 529.183L694.153 648.25L687.26 940.725Z" fill="white"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_45_2">
+                                    <rect width="1010" height="1010" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span class="logo-text">uppercase</span>
+                </a>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="#ai-video-editor">AI Video Editor</a></li>
+                            <li><a href="#pc-optimization">PC Optimization</a></li>
+                            <li><a href="#design-automation">Design Automation</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 uppercase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -9,18 +9,37 @@ const portfolioItems = document.querySelectorAll('.portfolio-item');
 const contactForm = document.querySelector('.contact-form');
 
 // Mobile Navigation Toggle
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
     });
-});
+
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
 
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
@@ -202,31 +221,33 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-// Cursor trail effect
-const cursor = document.createElement('div');
-cursor.className = 'cursor-trail';
-cursor.style.cssText = `
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.8) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-`;
-document.body.appendChild(cursor);
+// Cursor trail effect - only on desktop
+if (window.innerWidth > 768) {
+    const cursor = document.createElement('div');
+    cursor.className = 'cursor-trail';
+    cursor.style.cssText = `
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.8) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+    document.body.appendChild(cursor);
 
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX - 10 + 'px';
-    cursor.style.top = e.clientY - 10 + 'px';
-    cursor.style.opacity = '1';
-});
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX - 10 + 'px';
+        cursor.style.top = e.clientY - 10 + 'px';
+        cursor.style.opacity = '1';
+    });
 
-document.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '0';
-});
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+    });
+}
 
 // Typing effect for hero title
 function typeWriter(element, text, speed = 100) {
@@ -275,8 +296,13 @@ window.addEventListener('scroll', () => {
     progressBar.style.width = scrollPercent + '%';
 });
 
-// Particle system for hero background
+// Particle system for hero background - only on desktop
 function createParticles() {
+    if (window.innerWidth <= 768) return; // Skip on mobile
+    
+    const heroBackground = document.querySelector('.hero-background');
+    if (!heroBackground) return;
+    
     const particleContainer = document.createElement('div');
     particleContainer.className = 'particles';
     particleContainer.style.cssText = `
@@ -289,9 +315,9 @@ function createParticles() {
         z-index: 1;
     `;
     
-    document.querySelector('.hero-background').appendChild(particleContainer);
+    heroBackground.appendChild(particleContainer);
     
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 30; i++) { // Reduced particle count
         const particle = document.createElement('div');
         particle.style.cssText = `
             position: absolute;
@@ -369,22 +395,41 @@ window.addEventListener('scroll', throttle(() => {
     });
 }, 16)); // ~60fps
 
-// FAQ Functionality
-const faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
+// FAQ Functionality - Enhanced
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    console.log('Found FAQ items:', faqItems.length); // Debug log
+    
+    faqItems.forEach((item, index) => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
         
-        // Close all other FAQ items
-        faqItems.forEach(otherItem => {
-            if (otherItem !== item) {
-                otherItem.classList.remove('active');
-            }
-        });
-        
-        // Toggle current item
-        item.classList.toggle('active', !isActive);
+        if (question && answer) {
+            console.log(`FAQ item ${index + 1} initialized`); // Debug log
+            
+            question.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log(`FAQ item ${index + 1} clicked`); // Debug log
+                
+                const isActive = item.classList.contains('active');
+                
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                if (isActive) {
+                    item.classList.remove('active');
+                } else {
+                    item.classList.add('active');
+                }
+                
+                console.log(`FAQ item ${index + 1} is now:`, item.classList.contains('active') ? 'active' : 'inactive');
+            });
+        }
     });
 });
 
@@ -610,41 +655,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Enhanced mobile menu functionality
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        
-        // Prevent body scroll when menu is open
-        if (navMenu.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-    });
-    
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    });
-}
 
 // Add loading animation for page transitions
 window.addEventListener('load', () => {
